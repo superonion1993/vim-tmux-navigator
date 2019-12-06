@@ -1,4 +1,4 @@
-" Maps <C-h/j/k/l> to switch vim splits in the given direction. If there are
+" Maps <C-W><h/j/k/l> to switch vim splits in the given direction. If there are
 " no more windows in that direction, forwards the operation to tmux.
 " Additionally, <C-\> toggles between last active vim splits/tmux panes.
 
@@ -16,11 +16,11 @@ function! s:VimNavigate(direction)
 endfunction
 
 if !get(g:, 'tmux_navigator_no_mappings', 0)
-  nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-  nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-  nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-  nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-  nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+  nnoremap <silent> <C-W><h> :TmuxNavigateLeft<cr>
+  nnoremap <silent> <C-W><j> :TmuxNavigateDown<cr>
+  nnoremap <silent> <C-W><k> :TmuxNavigateUp<cr>
+  nnoremap <silent> <C-W><l> :TmuxNavigateRight<cr>
+  nnoremap <silent> <C-W><\> :TmuxNavigatePrevious<cr>
 endif
 
 if empty($TMUX)
